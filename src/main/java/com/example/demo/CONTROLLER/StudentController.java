@@ -28,4 +28,12 @@ public class StudentController {
 
         return studentService.getschooFee();
     }
+
+    @RequestMapping(value = "/studentCustomeQuery", method = RequestMethod.GET)
+    @ResponseBody
+    public Iterable studentCustomeQuery() {
+        System.out.println("studentCustomeQuery-----passing here ");
+
+        return studentService.studentCustomeQuery();
+    }
 }

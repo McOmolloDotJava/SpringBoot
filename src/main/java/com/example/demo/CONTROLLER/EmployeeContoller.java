@@ -28,4 +28,19 @@ public class EmployeeContoller {
 
         return employeeService.getCertificate();
     }
+    @RequestMapping(value = "/customeQueryEmployee", method = RequestMethod.GET)
+    @ResponseBody
+    public Iterable customeQueryEmployee() {
+        System.out.println("data =---passing here ");
+
+        return employeeService.actionJoinTable();
+    }
+    @RequestMapping(value = "/customeQueryCertificate", method = RequestMethod.GET)
+    @ResponseBody
+    public Iterable ustomeQueryCertificate() {
+
+        System.out.println("data =---passing here ");
+
+        return employeeService.getcustomeQueryCertificate();
+    }
 }

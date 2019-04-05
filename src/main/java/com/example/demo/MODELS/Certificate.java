@@ -11,18 +11,13 @@ public class Certificate {
     @GeneratedValue
     Long id;
     private String certificate_name;
-
-    @JsonIgnoreProperties(value = "certificate")
-@ManyToOne
-@JoinColumn(name = "employee_id",nullable = false)
-private Employee employee;
-
+    private int employee_id;
 
     private Certificate(){}
 
-    public Certificate(String certificate_name, Employee employee) {
+    public Certificate(String certificate_name, int employee_id) {
         this.certificate_name = certificate_name;
-        this.employee = employee;
+        this.employee_id = employee_id;
     }
 
     public Long getId() {
@@ -41,11 +36,11 @@ private Employee employee;
         this.certificate_name = certificate_name;
     }
 
-    public Employee getEmployee() {
-        return employee;
+    public int getEmployee_id() {
+        return employee_id;
     }
 
-    public void setEmployee(Employee employee) {
-        this.employee = employee;
+    public void setEmployee_id(int employee_id) {
+        this.employee_id = employee_id;
     }
 }

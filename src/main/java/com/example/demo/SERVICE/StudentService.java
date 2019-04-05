@@ -27,6 +27,13 @@ com.example.demo.REPOSITORY.schoolfeeRepo schoolfeeRepo;
 
         System.out.println("data ="+schoolfeeRepo.findAll());
 
-        return schoolfeeRepo.findAll();
+        return schoolfeeRepo.findAllActiveUsersNative();
+    }
+
+    public Iterable studentCustomeQuery(){
+
+        System.out.println("data ="+studentRepo.findAllActiveUsersNative(1));
+
+        return Collections.singleton(studentRepo.findAllActiveUsersNative(1));
     }
 }

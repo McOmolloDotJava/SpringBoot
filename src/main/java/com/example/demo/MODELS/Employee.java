@@ -15,15 +15,12 @@ public class Employee {
     private String last_name;
     private int salary;
 
-    @JsonIgnoreProperties(value = "employee")
-    @OneToMany(mappedBy = "employee")
-    private Set<Certificate> certificates;
+    private Employee(){}
 
-    public Employee(String first_name, String last_name, int salary, Set<Certificate> certificates) {
+    public Employee(String first_name, String last_name, int salary) {
         this.first_name = first_name;
         this.last_name = last_name;
         this.salary = salary;
-        this.certificates = certificates;
     }
 
     public Long getId() {
@@ -57,13 +54,4 @@ public class Employee {
     public void setSalary(int salary) {
         this.salary = salary;
     }
-
-    public Set<Certificate> getCertificates() {
-        return certificates;
-    }
-
-    public void setCertificates(Set<Certificate> certificates) {
-        this.certificates = certificates;
-    }
-    private Employee(){}
 }
