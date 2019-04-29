@@ -2,10 +2,7 @@ package com.example.demo.CONTROLLER;
 
 import com.example.demo.SERVICE.HotelsService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/home")
@@ -13,6 +10,14 @@ public class HotelsController {
 @Autowired
     HotelsService hotelsService;
 
+    @RequestMapping(value = "/login", method = RequestMethod.POST)
+    @ResponseBody
+    public String login(@RequestBody String data) {
+
+        System.out.println("login------ "+data);
+
+        return "1";
+    }
     @RequestMapping(value = "/hotels", method = RequestMethod.GET)
     @ResponseBody
     public Iterable hotels() {
